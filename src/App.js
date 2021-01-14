@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Header from './Header';
-import SearchBar from './SearchBar';
-import Table from './Table';
+import Header from './Components/Header';
+import Table from './Components/Table';
+import Chart from './Components/Chart';
 
 function App() {
 
@@ -36,7 +36,7 @@ function App() {
         stats={stats} 
       />
 
-      <SearchBar />
+      <Chart/>
 
     </div>
   );
