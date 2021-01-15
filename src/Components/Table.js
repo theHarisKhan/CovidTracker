@@ -25,7 +25,7 @@ function Table({stats}) {
                 <td className="recoverd">{stat.recovered}</td>
                 <td className="infected">{stat.deceased}</td>
                 <td><a href={stat.sourceUrl} rel="noreferrer" target="_blank">Source</a></td>
-                <td>{stat.lastUpdatedApify}</td>
+                <td>{new Date(stat.lastUpdatedApify).toDateString()}</td>
               </tr>
             ))}
           </table>

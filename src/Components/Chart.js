@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Pie} from 'react-chartjs-2'
+import {Bar} from 'react-chartjs-2'
 
 function Chart() {
     const [globalData, setGlobalData] = useState({})
@@ -20,24 +20,30 @@ function Chart() {
             'Total Deaths'
         ],
         datasets: [{
+            label: 'People',
             data: [globalData.TotalConfirmed, globalData.TotalRecovered, globalData.TotalDeaths],
             backgroundColor: [
                 '#FF6384',
-                '#36A2EB',
-                'FFCE56'
+                'green',
+                'red'
             ],
             hoverBackgroundColor: [
                 '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
+                'green',
+                'red'
             ]
         }]
     }
 
     return (
         <div>
-            <h1>Covid Data</h1>
-            <Pie data={data} />
+            <h1>COVID WORLD STATS</h1>
+            <ul className="list--item">
+                <li className="item--data">Confirmed <br/> <span className="data">{globalData.TotalConfirmed}</span></li>
+                <li className="item--data">Recovered <br/> <span className="data">{globalData.TotalRecovered}</span></li>
+                <li className="item--data">Deaths <br/> <span className="data">{globalData.TotalDeaths}</span></li>
+            </ul>
+            <Bar data={data} />
             
         </div>
     )

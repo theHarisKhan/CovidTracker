@@ -21,23 +21,25 @@ function App() {
     <div className="App">
       <h1 className="App--title"><span>Covid</span>Tracker</h1>
 
-      <div className="grid">
-        {stats.slice(0,6).map((stat,key) => (
-          <Header
-            key={key}
-            country={stat.country}
-            infected={stat.infected}
-            recoverd={stat.recovered}
-          />
-        ))}
-      </div>
+      <div className="content">
+        <div className="grid">
+          {stats.slice(0,6).map((stat,key) => (
+            <Header
+              key={key}
+              country={stat.country}
+              infected={stat.infected}
+              recoverd={stat.recovered}
+            />
+          ))}
+        </div>
 
-      <Table
+        <Chart/>
+
+        <Table
         stats={stats} 
       />
 
-      <Chart/>
-
+      </div>
     </div>
   );
 }
